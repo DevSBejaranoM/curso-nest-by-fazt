@@ -62,4 +62,26 @@ Si creamos un pipe personalizado y queremos añadirlo a un decorador @Query() lo
 
 La diferencia es que un Middleware actúa a nivel de petición HTTP y los guards a nivel del controlador.
 
+##### Uso de prisma
+
+Instalación: `npm install prisma --save-dev`
+
+Inicialización: `npx prisma init`
+
+Una vez creado el modelo de la tabla, podemos usar el comando `npx prisma migrate dev --name init` para migrar los cambios a la base de datos
+
+##### Swagger documentation
+
+Instalación: npm install --save @nestjs/swagger
+
+Añadir a main.ts: `import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';`
+
+`const config = new DocumentBuilder()
+    .setTitle('Cats example')
+    .setDescription('The cats API description')
+    .setVersion('1.0')
+    .addTag('cats')
+    .build();
+  const documentFactory = () => SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, documentFactory);`
 
