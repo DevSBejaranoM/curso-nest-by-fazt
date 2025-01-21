@@ -6,13 +6,15 @@ import { HelloController } from './hello/hello.controller';
 import { UsersController } from './users/users.controller';
 import { UsersService } from './users/users.service';
 import { UsersModule } from './users/users.module';
+import { PaymentsModule } from './payments/payments.module';
 
 @Module({
   imports: [
     TasksModule,
     ProjectsModule,
     AuthModule,
-    UsersModule
+    UsersModule,
+    PaymentsModule
   ],
   controllers: [HelloController, UsersController],
   providers: [UsersService],
